@@ -1,75 +1,29 @@
-// { Driver Code Starts
-//Initial Template for C++
 
 #include <bits/stdc++.h>
+
 using namespace std;
 
-
- // } Driver Code Ends
-//User function Template for C++
-
-template <class T>
-void sortArray(T a[], int n)
-{ 
-	sort(a,a+n);
-}
-
-template <class T>
-void printArray(T a[], int n)
-{
-	for(int i=0;i<n;i++){
-	    cout<<a[i]<<" ";
-	}
-	cout<<endl;
-}
-
-// { Driver Code Starts.
-
+#define ll long long
+#define mod 1000000007
 
 int main()
 {
-    int t;
-    cin>>t;
-    while(t--)
-    {
-	int n, q, i;
-	cin>>n>>q;
-	
-	int intArr[n];
-	string strArr[n];
-    float floatArr[n];
-    
-	switch(q)
+	ll n, k, t,temp;
+	cin >> t;
+	while (t--)
 	{
-	    case 1:
-	    for(i=0; i<n; i++)
-	    {
-	        cin>>intArr[i];
-	    }
-	    sortArray(intArr, n);
-    	printArray(intArr, n);
-    	break;
-        
-        case 2:
-	    for(i=0; i<n; i++)
-	    {
-	        cin>>strArr[i];
-	    }
-	    sortArray(strArr, n);
-    	printArray(strArr, n);
-    	break;
-    	
-        case 3:
-	    for(i=0; i<n; i++)
-	    {
-	        cin>>floatArr[i];
-	    }
-	    sortArray(floatArr, n);
-    	printArray(floatArr, n);
-    	break;
+		cin >> n >> k ;
+		ll max =0;
+		for (int i = 1; i <= k; i++)
+		{
+			temp = n%i;
+			if (temp > max)
+				max = temp;
+		}
+		cout << max << endl;
 	}
-    }
+
+		
 
 	return 0;
 }
-  // } Driver Code Ends
