@@ -3,29 +3,21 @@ using namespace std;
 
 int main()
 {
-	string s;
-	cin >> s;
-	int n;
-	cin >> n;
-	while (n--)
-	{
-		string w;
-		int c = 0;
-		cin >> w;
-		for (int j = 0; j < w.length(); j++)
-		{
-			for (int i = 0; i < s.length(); i++)
-			{
-
-				if (w[j] == s[i])
-					c++;
+	int a,x;
+	cin>>a;
+	while(a--){
+		x=0;
+		string b,c;
+		cin>>b>>c;
+		for(int i=0;i<b.length();i++){
+			if(b[i] != c[i] && b[i] != '?' && c[i] != '?'){
+				x = 1;
+				break;
 			}
 		}
-		if (c == w.length())
-			cout << "Yes" << endl;
+		cout << ((x ==1) ? "No" : "Yes") << endl;
 
-		else
-			cout << "No" << endl;
 	}
+	
 	return 0;
 }
