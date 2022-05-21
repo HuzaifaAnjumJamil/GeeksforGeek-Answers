@@ -1,29 +1,31 @@
-
 #include <bits/stdc++.h>
-
 using namespace std;
-
-#define ll long long
-#define mod 1000000007
 
 int main()
 {
-	ll n, k, t,temp;
-	cin >> t;
-	while (t--)
+	string s;
+	cin >> s;
+	int n;
+	cin >> n;
+	while (n--)
 	{
-		cin >> n >> k ;
-		ll max =0;
-		for (int i = 1; i <= k; i++)
+		string w;
+		int c = 0;
+		cin >> w;
+		for (int j = 0; j < w.length(); j++)
 		{
-			temp = n%i;
-			if (temp > max)
-				max = temp;
+			for (int i = 0; i < s.length(); i++)
+			{
+
+				if (w[j] == s[i])
+					c++;
+			}
 		}
-		cout << max << endl;
+		if (c == w.length())
+			cout << "Yes" << endl;
+
+		else
+			cout << "No" << endl;
 	}
-
-		
-
 	return 0;
 }
