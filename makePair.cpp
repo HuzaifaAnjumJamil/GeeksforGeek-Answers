@@ -1,23 +1,39 @@
-#include<bits/stdc++.h>
-using namespace std ;
+#include <bits/stdc++.h>
+using namespace std;
 
-int main(){
-    int t ;
-    cin >>t ;
-    while(t--){
-        int n  , x , y ;
-        cin >> n >> x >> y ;
-        int a[n] ;
-        for(int i = 0 ; i < n ; i++){
-            cin>>a[i] ;
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        long long int n;
+        cin >> n;
+        long long sumeven = 0;
+        long long sumodd = 0;
+        long long int arr[n];
+        for (long long int i = 0; i < n; i++)
+        {
+            cin >> arr[i];
         }
-        int count = 0 ;
-        for(int i= 0 ; i < n ; i++){
-            if(a[i] <= x && a[i]%y == 0 ){
-              count++ ;
+
+        long long output = 0;
+
+        for (long long int i = 0; i < n; i++)
+        {
+
+            if (i % 2 == 0)
+            {
+                sumeven += arr[i];
+            }
+            else
+            {
+                sumodd += arr[i];
             }
         }
-        cout<<count<<endl ;
+        output = sumodd > sumeven ? sumodd : sumeven;
+
+        cout << output << endl;
     }
     return 0;
 }
