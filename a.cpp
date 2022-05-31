@@ -8,13 +8,15 @@ int main(){
   ll t;
   cin>>t;
   while(t--){
-    ll x,m,d;
-    cin>>x>>m>>d;
-    ll ans=0;
-    ll a=x * m;
-    ll b=x + d;
-    ans = min(a,b);
-    cout<<ans<<endl;
+    ll a,b,c,d;
+    cin>>a>>b>>c>>d;
+    ll ans=180;
+    if((a+c) == ans && (b+d) == ans){
+      cout<<"YES"<<endl;
+    }
+    else{
+      cout<<"NO"<<endl;
+    }
 
   }
   return 0;
